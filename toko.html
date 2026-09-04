@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>AN NAHL - Toko Laptop</title>
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #fff8ef;
+        color: #333;
+    }
+
+    /* NAVBAR */
+
+    nav {
+        background: linear-gradient(90deg, #7da7d9, #f3a6c8);
+        color: white;
+        padding: 18px 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .logo {
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .logo span {
+        color: #fff1d6;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 25px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 420px;
+        padding: 80px 7%;
+        display: flex;
+        align-items: center;
+
+        background: linear-gradient(
+            135deg,
+            #fff1dc,
+            #dcecff,
+            #fde2ed
+        );
+    }
+
+    .hero-text {
+        max-width: 600px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+        color: #4778b8;
+        margin-bottom: 15px;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+        color: #555;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        color: #666;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .hero button {
+        margin-top: 25px;
+        padding: 14px 25px;
+        border: none;
+        border-radius: 30px;
+
+        background: linear-gradient(
+            90deg,
+            #6f9fd2,
+            #ed9fbd
+        );
+
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+
+    /* SECTION */
+
+    section {
+        padding: 50px 7%;
+    }
+
+    .title {
+        text-align: center;
+        margin-bottom: 35px;
+    }
+
+    .title h2 {
+        font-size: 32px;
+        color: #527fb8;
+    }
+
+    .title p {
+        color: #888;
+        margin-top: 8px;
+    }
+
+
+    /* SEARCH */
+
+    .search-box {
+        max-width: 600px;
+        margin: 0 auto 35px;
+    }
+
+    .search-box input {
+        width: 100%;
+        padding: 15px 20px;
+
+        border: 2px solid #d9e8f8;
+        border-radius: 30px;
+
+        outline: none;
+        font-size: 16px;
+        background: #fffdf9;
+    }
+
+    .search-box input:focus {
+        border-color: #efa8c4;
+    }
+
+
+    /* MERK */
+
+    .brands {
+        display: grid;
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(150px, 1fr)
+        );
+
+        gap: 20px;
+    }
+
+    .brand {
+        background: #fffdf9;
+        padding: 30px 20px;
+        border-radius: 20px;
+
+        text-align: center;
+        cursor: pointer;
+
+        border: 2px solid transparent;
+
+        box-shadow:
+            0 8px 25px rgba(100, 120, 150, 0.08);
+
+        transition: 0.3s;
+    }
+
+    .brand:hover {
+        transform: translateY(-7px);
+        border-color: #efa8c4;
+
+        box-shadow:
+            0 10px 30px rgba(239, 168, 196, 0.25);
+    }
+
+    .brand-icon {
+        font-size: 45px;
+        margin-bottom: 12px;
+    }
+
+    .brand h3 {
+        color: #527fb8;
+    }
+
+
+    /* PRODUCTS */
+
+    .products {
+        display: grid;
+
+        grid-template-columns:
+            repeat(
+                auto-fit,
+                minmax(230px, 1fr)
+            );
+
+        gap: 25px;
+    }
+
+    .product {
+        background: #fffdf9;
+        border-radius: 20px;
+        overflow: hidden;
+
+        box-shadow:
+            0 8px 25px rgba(100, 120, 150, 0.08);
+
+        transition: 0.3s;
+    }
+
+    .product:hover {
+        transform: translateY(-6px);
+    }
+
+    .product-img {
+        height: 170px;
+
+        background: linear-gradient(
+            135deg,
+            #e3effc,
+            #fde4ee,
+            #fff1dc
+        );
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 75px;
+    }
+
+    .product-info {
+        padding: 20px;
+    }
+
+    .product-info small {
+        color: #e58daf;
+        font-weight: bold;
+    }
+
+    .product-info h3 {
+        margin: 8px 0;
+    }
+
+    .price {
+        color: #527fb8;
+        font-size: 20px;
+        font-weight: bold;
+        margin: 12px 0;
+    }
+
+    .cart-btn {
+        width: 100%;
+        padding: 12px;
+
+        border: none;
+        border-radius: 10px;
+
+        background: linear-gradient(
+            90deg,
+            #6f9fd2,
+            #ed9fbd
+        );
+
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .cart-btn:hover {
+        opacity: 0.9;
+    }
+
+
+    /* KERANJANG */
+
+    .cart {
+        background: #fffdf9;
+        border-radius: 20px;
+        padding: 30px;
+
+        max-width: 900px;
+        margin: auto;
+
+        box-shadow:
+            0 8px 30px rgba(100, 120, 150, 0.08);
+    }
+
+    .cart-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 15px 0;
+
+        border-bottom: 1px solid #eee;
+
+        gap: 15px;
+    }
+
+    .cart-item button {
+        background: #e89ab7;
+        color: white;
+
+        border: none;
+
+        padding: 8px 12px;
+
+        border-radius: 8px;
+
+        cursor: pointer;
+    }
+
+    .total {
+        text-align: right;
+
+        margin-top: 20px;
+
+        font-size: 22px;
+        font-weight: bold;
+
+        color: #527fb8;
+    }
+
+    .buy-btn {
+        margin-top: 20px;
+
+        width: 100%;
+
+        padding: 15px;
+
+        border: none;
+        border-radius: 12px;
+
+        background: linear-gradient(
+            90deg,
+            #ed9fbd,
+            #6f9fd2
+        );
+
+        color: white;
+
+        font-size: 17px;
+        font-weight: bold;
+
+        cursor: pointer;
+    }
+
+    .empty {
+        text-align: center;
+        padding: 30px;
+        color: #777;
+    }
+
+
+    /* METODE PEMBELIAN */
+
+    .payment-box {
+        display: none;
+
+        background: #fffdf9;
+
+        max-width: 700px;
+
+        margin: 30px auto 0;
+
+        padding: 30px;
+
+        border-radius: 20px;
+
+        box-shadow:
+            0 8px 30px rgba(100, 120, 150, 0.08);
+    }
+
+    .payment-box h3 {
+        text-align: center;
+
+        color: #527fb8;
+
+        margin-bottom: 20px;
+    }
+
+    .payment-option {
+        display: block;
+
+        padding: 15px;
+
+        margin-bottom: 12px;
+
+        border: 2px solid #e4edf7;
+
+        border-radius: 12px;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+    }
+
+    .payment-option:hover {
+        border-color: #efa8c4;
+
+        background: #fff5f8;
+    }
+
+    .payment-option input {
+        margin-right: 10px;
+    }
+
+    .payment-detail {
+        display: none;
+
+        margin-top: 15px;
+
+        padding: 15px;
+
+        border-radius: 12px;
+
+        background: #fff1dc;
+
+        color: #555;
+
+        line-height: 1.6;
+    }
+
+    .confirm-btn {
+        width: 100%;
+
+        padding: 14px;
+
+        margin-top: 20px;
+
+        border: none;
+
+        border-radius: 12px;
+
+        background: linear-gradient(
+            90deg,
+            #6f9fd2,
+            #ed9fbd
+        );
+
+        color: white;
+
+        font-size: 16px;
+
+        font-weight: bold;
+
+        cursor: pointer;
+    }
+
+
+    /* ABOUT ME */
+
+    .about {
+        padding: 50px 7%;
+
+        background: linear-gradient(
+            135deg,
+            #fff1dc,
+            #fde2ed,
+            #dcecff
+        );
+    }
+
+    .about-members {
+        max-width: 800px;
+
+        margin: auto;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 20px;
+    }
+
+    .about-card {
+        background: #fffdf9;
+
+        padding: 20px;
+
+        border-radius: 15px;
+
+        box-shadow:
+            0 8px 25px rgba(100, 120, 150, 0.06);
+    }
+
+    .about-card h3 {
+        color: #527fb8;
+
+        margin-bottom: 8px;
+    }
+
+    .about-card p {
+        color: #555;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        margin-top: 50px;
+
+        background: #5b7698;
+
+        color: white;
+
+        text-align: center;
+
+        padding: 30px;
+    }
+
+    footer span {
+        color: #f6c1d5;
+    }
+
+
+    /* RESPONSIVE */
+
+    @media (max-width: 600px) {
+
+        nav {
+            padding: 15px 5%;
+        }
+
+        .logo {
+            font-size: 22px;
+        }
+
+        nav a {
+            margin-left: 10px;
+            font-size: 13px;
+        }
+
+        .hero {
+            padding: 60px 6%;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+        }
+
+        section {
+            padding: 40px 6%;
+        }
+
+        .about-members {
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">
+        AN <span>NAHL</span>
+    </div>
+
+    <div>
+
+        <a onclick="goHome()">
+            Beranda
+        </a>
+
+        <a onclick="goBrands()">
+            Laptop
+        </a>
+
+        <a onclick="goAbout()">
+            About Me
+        </a>
+
+        <a onclick="goCart()">
+            🛒 Keranjang
+            (<span id="cartCount">0</span>)
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<div class="hero" id="home">
+
+    <div class="hero-text">
+
+        <h1>AN NAHL</h1>
+
+        <h2>
+            Toko Laptop Modern
+        </h2>
+
+        <p>
+
+            Temukan laptop impianmu dari berbagai merk
+            terpercaya dengan pilihan lengkap dan harga terbaik.
+
+        </p>
+
+        <button onclick="goBrands()">
+
+            Lihat Laptop
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- MERK LAPTOP -->
+
+<section id="brandSection">
+
+    <div class="title">
+
+        <h2>
+            Pilih Merk Laptop
+        </h2>
+
+        <p>
+            Pilih merk laptop yang ingin kamu lihat
+        </p>
+
+    </div>
+
+
+    <div class="brands">
+
+
+        <div class="brand"
+             onclick="showBrand('ASUS')">
+
+            <div class="brand-icon">
+                💻
+            </div>
+
+            <h3>
+                ASUS
+            </h3>
+
+        </div>
+
+
+        <div class="brand"
+             onclick="showBrand('LENOVO')">
+
+            <div class="brand-icon">
+                💻
+            </div>
+
+            <h3>
+                LENOVO
+            </h3>
+
+        </div>
+
+
+        <div class="brand"
+             onclick="showBrand('ACER')">
+
+            <div class="brand-icon">
+                💻
+            </div>
+
+            <h3>
+                ACER
+            </h3>
+
+        </div>
+
+
+        <div class="brand"
+             onclick="showBrand('HP')">
+
+            <div class="brand-icon">
+                💻
+            </div>
+
+            <h3>
+                HP
+            </h3>
+
+        </div>
+
+
+        <div class="brand"
+             onclick="showBrand('DELL')">
+
+            <div class="brand-icon">
+                💻
+            </div>
+
+            <h3>
+                DELL
+            </h3>
+
+        </div>
+
+
+        <div class="brand"
+             onclick="showBrand('MSI')">
+
+            <div class="brand-icon">
+                💻
+            </div>
+
+            <h3>
+                MSI
+            </h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUK -->
+
+<section id="productSection">
+
+    <div class="title">
+
+        <h2 id="productTitle">
+            Semua Laptop
+        </h2>
+
+        <p>
+            Pilih laptop yang kamu inginkan
+        </p>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="search"
+            placeholder="🔍 Cari laptop atau merk..."
+            onkeyup="searchProduct()"
+        >
+
+    </div>
+
+
+    <div class="products"
+         id="products">
+
+    </div>
+
+</section>
+
+
+<!-- KERANJANG -->
+
+<section id="cartSection">
+
+    <div class="title">
+
+        <h2>
+            🛒 Keranjang Belanja
+        </h2>
+
+        <p>
+            Laptop yang kamu pilih
+        </p>
+
+    </div>
+
+
+    <div class="cart">
+
+        <div id="cartItems">
+
+            <div class="empty">
+
+                Keranjang masih kosong.
+
+            </div>
+
+        </div>
+
+
+        <div class="total"
+             id="total">
+
+            Total: Rp0
+
+        </div>
+
+
+        <button
+            class="buy-btn"
+            onclick="buyNow()">
+
+            Beli Sekarang
+
+        </button>
+
+    </div>
+
+
+    <!-- METODE PEMBELIAN -->
+
+    <div class="payment-box"
+         id="paymentBox">
+
+
+        <h3>
+            💳 Pilih Metode Pembelian
+        </h3>
+
+
+        <!-- QRIS -->
+
+        <label class="payment-option">
+
+            <input
+                type="radio"
+                name="payment"
+                value="QRIS"
+                onclick="showPayment('qris')"
+            >
+
+            📱 QRIS
+
+        </label>
+
+
+        <div
+            class="payment-detail"
+            id="qris">
+
+            <b>
+                Pembayaran QRIS
+            </b>
+
+            <br>
+
+            Scan QRIS untuk melakukan pembayaran.
+
+            <br><br>
+
+            <b>
+                Nama Merchant:
+            </b>
+
+            AN NAHL
+
+        </div>
+
+
+        <!-- TRANSFER BANK -->
+
+        <label class="payment-option">
+
+            <input
+                type="radio"
+                name="payment"
+                value="Transfer Bank"
+                onclick="showPayment('bank')"
+            >
+
+            🏦 Transfer Bank
+
+        </label>
+
+
+        <div
+            class="payment-detail"
+            id="bank">
+
+            <b>
+                Transfer Bank
+            </b>
+
+            <br><br>
+
+            Bank:
+            <b>BNI</b>
+
+            <br>
+
+            No. Rekening:
+            <b>1234567890</b>
+
+            <br>
+
+            Atas Nama:
+            <b>AN NAHL</b>
+
+        </div>
+
+
+        <!-- COD -->
+
+        <label class="payment-option">
+
+            <input
+                type="radio"
+                name="payment"
+                value="COD"
+                onclick="showPayment('cod')"
+            >
+
+            💵 COD / Bayar di Tempat
+
+        </label>
+
+
+        <div
+            class="payment-detail"
+            id="cod">
+
+            <b>
+                COD / Bayar di Tempat
+            </b>
+
+            <br><br>
+
+            Pembayaran dilakukan saat barang diterima.
+
+        </div>
+
+
+        <button
+            class="confirm-btn"
+            onclick="confirmPayment()">
+
+            ✅ Konfirmasi Pembelian
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT ME -->
+
+<section
+    class="about"
+    id="aboutSection">
+
+
+    <div class="title">
+
+        <h2>
+            About Me
+        </h2>
+
+        <p>
+            Kelompok pembuat website AN NAHL
+        </p>
+
+    </div>
+
+
+    <div class="about-members">
+
+
+        <div class="about-card">
+
+            <h3>
+                1. Anindita Kesya Zahra
+            </h3>
+
+            <p>
+                8 Al Qolam
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <h3>
+                2. Daviena Gustya Rahayu
+            </h3>
+
+            <p>
+                8 An Nahl
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <h3>
+                3. Elsyafa Inayatul Humairah
+            </h3>
+
+            <p>
+                8 An Nahl
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <h3>
+                4. Priscilla Nadean
+            </h3>
+
+            <p>
+                8 An Nahl
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <h3>
+                5. Puspa Ayu Khorunnisa
+            </h3>
+
+            <p>
+                8 An Nahl
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <h3>
+                6. Naila Maharani
+            </h3>
+
+            <p>
+                8 An Nahl
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>
+        AN <span>NAHL</span>
+    </h3>
+
+    <p>
+        Toko Laptop Online Modern
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 AN NAHL. Semua Hak Dilindungi.
+    </p>
+
+</footer>
+
+
+<script>
+
+
+    /* DATA PRODUK */
+
+    const products = [
+
+        {
+            brand: "ASUS",
+            name: "ASUS Vivobook 14",
+            price: 7500000
+        },
+
+        {
+            brand: "ASUS",
+            name: "ASUS Vivobook Go 14",
+            price: 6800000
+        },
+
+        {
+            brand: "ASUS",
+            name: "ASUS TUF Gaming",
+            price: 12500000
+        },
+
+
+        {
+            brand: "LENOVO",
+            name: "Lenovo IdeaPad 3",
+            price: 6500000
+        },
+
+        {
+            brand: "LENOVO",
+            name: "Lenovo IdeaPad Slim 3",
+            price: 7200000
+        },
+
+        {
+            brand: "LENOVO",
+            name: "Lenovo LOQ Gaming",
+            price: 13500000
+        },
+
+
+        {
+            brand: "ACER",
+            name: "Acer Aspire 3",
+            price: 5900000
+        },
+
+        {
+            brand: "ACER",
+            name: "Acer Aspire 5",
+            price: 7500000
+        },
+
+        {
+            brand: "ACER",
+            name: "Acer Nitro V",
+            price: 12000000
+        },
+
+
+        {
+            brand: "HP",
+            name: "HP 14",
+            price: 6200000
+        },
+
+        {
+            brand: "HP",
+            name: "HP Pavilion",
+            price: 8500000
+        },
+
+        {
+            brand: "HP",
+            name: "HP Victus Gaming",
+            price: 13000000
+        },
+
+
+        {
+            brand: "DELL",
+            name: "Dell Inspiron 14",
+            price: 7800000
+        },
+
+        {
+            brand: "DELL",
+            name: "Dell Vostro",
+            price: 8500000
+        },
+
+        {
+            brand: "DELL",
+            name: "Dell G15 Gaming",
+            price: 14000000
+        },
+
+
+        {
+            brand: "MSI",
+            name: "MSI Modern 14",
+            price: 8500000
+        },
+
+        {
+            brand: "MSI",
+            name: "MSI Thin Gaming",
+            price: 11000000
+        },
+
+        {
+            brand: "MSI",
+            name: "MSI Katana Gaming",
+            price: 15000000
+        }
+
+    ];
+
+
+    let cart = [];
+
+    let currentProducts = products;
+
+
+    /* FORMAT RUPIAH */
+
+    function rupiah(number) {
+
+        return "Rp" +
+            number.toLocaleString("id-ID");
+
+    }
+
+
+    /* MENAMPILKAN PRODUK */
+
+    function displayProducts(data) {
+
+        const container =
+            document.getElementById("products");
+
+        container.innerHTML = "";
+
+
+        if (data.length === 0) {
+
+            container.innerHTML =
+                "<div class='empty'>" +
+                "Produk tidak ditemukan." +
+                "</div>";
+
+            return;
+
+        }
+
+
+        data.forEach((product) => {
+
+            container.innerHTML += `
+
+                <div class="product">
+
+                    <div class="product-img">
+                        💻
+                    </div>
+
+                    <div class="product-info">
+
+                        <small>
+                            ${product.brand}
+                        </small>
+
+                        <h3>
+                            ${product.name}
+                        </h3>
+
+                        <div class="price">
+
+                            ${rupiah(product.price)}
+
+                        </div>
+
+                        <button
+                            class="cart-btn"
+                            onclick="addToCart(
+                                ${products.indexOf(product)}
+                            )">
+
+                            🛒 Masukkan ke Keranjang
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        });
+
+    }
+
+
+    /* PILIH MERK */
+
+    function showBrand(brand) {
+
+        currentProducts =
+            products.filter(
+                product =>
+                product.brand === brand
+            );
+
+
+        document.getElementById(
+            "productTitle"
+        ).innerText =
+            "Laptop " + brand;
+
+
+        displayProducts(currentProducts);
+
+
+        document.getElementById(
+            "productSection"
+        ).scrollIntoView({
+
+            behavior: "smooth"
+
+        });
+
+    }
+
+
+    /* SEARCH */
+
+    function searchProduct() {
+
+        const keyword =
+            document.getElementById(
+                "search"
+            ).value.toLowerCase();
+
+
+        const result =
+            currentProducts.filter(
+                product =>
+                product.name
+                    .toLowerCase()
+                    .includes(keyword) ||
+
+                product.brand
+                    .toLowerCase()
+                    .includes(keyword)
+            );
+
+
+        displayProducts(result);
+
+    }
+
+
+    /* TAMBAH KERANJANG */
+
+    function addToCart(index) {
+
+        const product =
+            products[index];
+
+        cart.push(product);
+
+        updateCart();
+
+
+        alert(
+            product.name +
+            " berhasil masuk ke keranjang!"
+        );
+
+    }
+
+
+    /* UPDATE KERANJANG */
+
+    function updateCart() {
+
+        document.getElementById(
+            "cartCount"
+        ).innerText =
+            cart.length;
+
+
+        const container =
+            document.getElementById(
+                "cartItems"
+            );
+
+
+        container.innerHTML = "";
+
+
+        if (cart.length === 0) {
+
+            container.innerHTML =
+                "<div class='empty'>" +
+                "Keranjang masih kosong." +
+                "</div>";
+
+        }
+
+
+        let total = 0;
+
+
+        cart.forEach(
+            (product, index) => {
+
+                total += product.price;
+
+
+                container.innerHTML += `
+
+                    <div class="cart-item">
+
+                        <div>
+
+                            <strong>
+                                ${product.name}
+                            </strong>
+
+                            <br>
+
+                            <small>
+                                ${product.brand}
+                            </small>
+
+                            <br>
+
+                            ${rupiah(product.price)}
+
+                        </div>
+
+
+                        <button
+                            onclick="removeCart(${index})">
+
+                            Hapus
+
+                        </button>
+
+                    </div>
+
+                `;
+
+            }
+        );
+
+
+        document.getElementById(
+            "total"
+        ).innerText =
+            "Total: " +
+            rupiah(total);
+
+    }
+
+
+    /* HAPUS KERANJANG */
+
+    function removeCart(index) {
+
+        cart.splice(index, 1);
+
+        updateCart();
+
+    }
+
+
+    /* BELI SEKARANG */
+
+    function buyNow() {
+
+        if (cart.length === 0) {
+
+            alert(
+                "Keranjang kamu masih kosong!"
+            );
+
+            return;
+
+        }
+
+
+        document.getElementById(
+            "paymentBox"
+        ).style.display =
+            "block";
+
+
+        document.getElementById(
+            "paymentBox"
+        ).scrollIntoView({
+
+            behavior: "smooth"
+
+        });
+
+    }
+
+
+    /* PILIH METODE PEMBAYARAN */
+
+    function showPayment(type) {
+
+        document.getElementById(
+            "qris"
+        ).style.display =
+            "none";
+
+
+        document.getElementById(
+            "bank"
+        ).style.display =
+            "none";
+
+
+        document.getElementById(
+            "cod"
+        ).style.display =
+            "none";
+
+
+        document.getElementById(
+            type
+        ).style.display =
+            "block";
+
+    }
+
+
+    /* KONFIRMASI PEMBELIAN */
+
+    function confirmPayment() {
+
+        if (cart.length === 0) {
+
+            alert(
+                "Keranjang kamu masih kosong!"
+            );
+
+            return;
+
+        }
+
+
+        const selected =
+            document.querySelector(
+                'input[name="payment"]:checked'
+            );
+
+
+        if (!selected) {
+
+            alert(
+                "Silakan pilih metode pembelian terlebih dahulu!"
+            );
+
+            return;
+
+        }
+
+
+        let total = 0;
+
+
+        cart.forEach(
+            product => {
+
+                total += product.price;
+
+            }
+        );
+
+
+        alert(
+
+            "Pesanan berhasil dibuat! 🎉\n\n" +
+
+            "Jumlah barang: " +
+            cart.length +
+
+            "\nMetode pembayaran: " +
+            selected.value +
+
+            "\nTotal: " +
+            rupiah(total) +
+
+            "\n\nTerima kasih sudah berbelanja di AN NAHL!"
+
+        );
+
+    }
+
+
+    /* NAVIGASI */
+
+    function goHome() {
+
+        document.getElementById(
+            "home"
+        ).scrollIntoView({
+
+            behavior: "smooth"
+
+        });
+
+    }
+
+
+    function goBrands() {
+
+        document.getElementById(
+            "brandSection"
+        ).scrollIntoView({
+
+            behavior: "smooth"
+
+        });
+
+    }
+
+
+    function goAbout() {
+
+        document.getElementById(
+            "aboutSection"
+        ).scrollIntoView({
+
+            behavior: "smooth"
+
+        });
+
+    }
+
+
+    function goCart() {
+
+        document.getElementById(
+            "cartSection"
+        ).scrollIntoView({
+
+            behavior: "smooth"
+
+        });
+
+    }
+
+
+    /* TAMPILKAN PRODUK */
+
+    displayProducts(products);
+
+    updateCart();
+
+
+</script>
+```
+
+</body>
+</html>
